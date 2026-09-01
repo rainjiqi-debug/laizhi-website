@@ -1,0 +1,1113 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>上海来之贸易有限公司 | Shanghai Laizhi Trading Co., Ltd.</title>
+<style>
+  :root {
+    --primary: #1F4E79;
+    --primary-light: #2E75B6;
+    --primary-dark: #15395A;
+    --gold: #D4AF37;
+    --bg-light: #F8F9FA;
+    --bg-card: #FFFFFF;
+    --text-dark: #1A1A2E;
+    --text-body: #444444;
+    --text-light: #888888;
+    --border: #E0E0E0;
+    --shadow: 0 2px 20px rgba(0,0,0,0.06);
+    --shadow-hover: 0 8px 30px rgba(31,78,121,0.15);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Segoe UI', 'Microsoft YaHei', '微软雅黑', Arial, sans-serif;
+    color: var(--text-body);
+    background: #fff;
+    line-height: 1.7;
+  }
+
+  /* Navigation */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+    background: rgba(31,78,121,0.97);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 1px 10px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+  }
+  .nav-container {
+    max-width: 1200px; margin: 0 auto; padding: 0 24px;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 10px;
+    color: #fff; font-size: 18px; font-weight: 700;
+    letter-spacing: 0.5px;
+  }
+  .nav-logo .logo-icon {
+    width: 36px; height: 36px;
+    background: var(--gold); border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; color: var(--primary-dark);
+    font-weight: 900;
+  }
+  .nav-links { display: flex; gap: 32px; align-items: center; }
+  .nav-links a {
+    color: rgba(255,255,255,0.85); text-decoration: none;
+    font-size: 14px; font-weight: 500;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .lang-toggle {
+    background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25);
+    color: #fff; padding: 6px 16px; border-radius: 20px;
+    cursor: pointer; font-size: 13px; font-weight: 600;
+    transition: all 0.2s;
+  }
+  .lang-toggle:hover { background: var(--gold); color: var(--primary-dark); border-color: var(--gold); }
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+  }
+
+  /* Hero */
+  .hero {
+    min-height: 100vh; display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #0D2B45 0%, #1F4E79 50%, #2E75B6 100%);
+    position: relative; overflow: hidden;
+    padding: 80px 24px 40px;
+  }
+  .hero::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+    background-image:
+      radial-gradient(circle at 20% 50%, rgba(212,175,55,0.08) 0%, transparent 50%),
+      radial-gradient(circle at 80% 80%, rgba(46,117,182,0.15) 0%, transparent 50%);
+  }
+  .hero-content { position: relative; text-align: center; max-width: 900px; z-index: 1; }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(212,175,55,0.15); border: 1px solid rgba(212,175,55,0.3);
+    color: var(--gold); padding: 6px 20px; border-radius: 20px;
+    font-size: 13px; font-weight: 600; letter-spacing: 1px; margin-bottom: 24px;
+  }
+  .hero h1 {
+    color: #fff; font-size: 42px; font-weight: 800; line-height: 1.3;
+    margin-bottom: 16px; letter-spacing: -0.5px;
+  }
+  .hero h1 .accent { color: var(--gold); }
+  .hero .subtitle {
+    color: rgba(255,255,255,0.8); font-size: 18px; line-height: 1.6;
+    max-width: 700px; margin: 0 auto 36px;
+  }
+  .hero-stats {
+    display: flex; justify-content: center; gap: 48px; flex-wrap: wrap;
+    margin-top: 48px;
+  }
+  .hero-stat { text-align: center; }
+  .hero-stat .num {
+    color: var(--gold); font-size: 36px; font-weight: 800; line-height: 1;
+  }
+  .hero-stat .label { color: rgba(255,255,255,0.7); font-size: 13px; margin-top: 6px; }
+
+  /* Sections */
+  section { padding: 80px 24px; }
+  .section-container { max-width: 1200px; margin: 0 auto; }
+  .section-header { text-align: center; margin-bottom: 56px; }
+  .section-header .tag {
+    display: inline-block; color: var(--primary); font-size: 13px;
+    font-weight: 700; letter-spacing: 2px; text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .section-header h2 {
+    color: var(--text-dark); font-size: 32px; font-weight: 700;
+    letter-spacing: -0.3px;
+  }
+  .section-header .line {
+    width: 48px; height: 3px; background: var(--gold);
+    margin: 16px auto 0; border-radius: 2px;
+  }
+
+  /* About */
+  #about { background: var(--bg-light); }
+  .about-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+  }
+  @media (max-width: 900px) { .about-grid { grid-template-columns: 1fr; } }
+  .about-text p { margin-bottom: 16px; color: var(--text-body); font-size: 15px; line-height: 1.8; }
+  .about-text .highlight { color: var(--primary); font-weight: 600; }
+  .about-features { display: flex; flex-direction: column; gap: 16px; margin-top: 24px; }
+  .about-feature {
+    display: flex; align-items: flex-start; gap: 12px;
+    padding: 16px 20px; background: #fff; border-radius: 10px;
+    box-shadow: var(--shadow);
+  }
+  .about-feature .check {
+    width: 24px; height: 24px; min-width: 24px;
+    background: var(--primary); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: #fff; font-size: 14px;
+  }
+  .about-feature .text { font-size: 14px; color: var(--text-body); }
+  .about-feature .text strong { color: var(--text-dark); }
+
+  .about-visual {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    border-radius: 16px; padding: 40px; color: #fff;
+    position: relative; overflow: hidden;
+  }
+  .about-visual::before {
+    content: ''; position: absolute; top: -50%; right: -30%;
+    width: 400px; height: 400px; border-radius: 50%;
+    background: rgba(212,175,55,0.08);
+  }
+  .about-visual h3 { font-size: 22px; margin-bottom: 20px; position: relative; }
+  .about-visual .stat-row {
+    display: flex; justify-content: space-between; padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.1); position: relative;
+  }
+  .about-visual .stat-row:last-child { border-bottom: none; }
+  .about-visual .stat-row .label { color: rgba(255,255,255,0.7); font-size: 14px; }
+  .about-visual .stat-row .val { color: var(--gold); font-size: 18px; font-weight: 700; }
+
+  /* Services */
+  .services-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  }
+  @media (max-width: 900px) { .services-grid { grid-template-columns: 1fr; } }
+  .service-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 12px;
+    padding: 32px 28px; transition: all 0.3s ease; position: relative; overflow: hidden;
+  }
+  .service-card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: var(--primary); transform: scaleX(0); transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+  .service-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-4px); border-color: var(--primary-light); }
+  .service-card:hover::before { transform: scaleX(1); }
+  .service-card .icon {
+    width: 56px; height: 56px; border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 26px; margin-bottom: 20px; color: #fff;
+  }
+  .service-card h3 { color: var(--text-dark); font-size: 18px; margin-bottom: 12px; }
+  .service-card p { color: var(--text-body); font-size: 14px; line-height: 1.7; }
+  .service-card .tag-line {
+    display: inline-block; margin-top: 14px; font-size: 12px;
+    color: var(--primary); font-weight: 600;
+  }
+
+  /* Strengths */
+  #strengths { background: var(--bg-light); }
+  .strengths-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px;
+  }
+  @media (max-width: 768px) { .strengths-grid { grid-template-columns: 1fr; } }
+  .strength-item {
+    display: flex; gap: 20px; padding: 24px;
+    background: #fff; border-radius: 12px; box-shadow: var(--shadow);
+    transition: all 0.3s ease;
+  }
+  .strength-item:hover { box-shadow: var(--shadow-hover); transform: translateX(4px); }
+  .strength-item .num {
+    font-size: 36px; font-weight: 800; color: var(--primary-light);
+    line-height: 1; min-width: 50px; opacity: 0.5;
+  }
+  .strength-item h4 { color: var(--text-dark); font-size: 16px; margin-bottom: 8px; }
+  .strength-item p { color: var(--text-body); font-size: 13px; line-height: 1.6; }
+
+  /* Categories */
+  .categories-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px;
+  }
+  @media (max-width: 900px) { .categories-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 500px) { .categories-grid { grid-template-columns: 1fr; } }
+  .category-card {
+    background: #fff; border: 2px solid var(--border); border-radius: 10px;
+    padding: 24px 16px; text-align: center; transition: all 0.3s ease;
+  }
+  .category-card:hover { border-color: var(--gold); background: #FFFDF5; }
+  .category-card .emoji { font-size: 32px; margin-bottom: 12px; display: block; }
+  .category-card .name { color: var(--text-dark); font-size: 14px; font-weight: 600; }
+  .category-card .desc { color: var(--text-light); font-size: 12px; margin-top: 4px; }
+
+  /* Cases */
+  #cases { background: var(--bg-light); }
+  .cases-grid {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 32px;
+    max-width: 880px; margin: 0 auto;
+  }
+  @media (max-width: 768px) { .cases-grid { grid-template-columns: 1fr; } }
+  .case-card {
+    background: #fff; border-radius: 14px; overflow: hidden;
+    box-shadow: var(--shadow); transition: all 0.3s ease;
+    display: flex; flex-direction: column;
+  }
+  .case-card:hover { box-shadow: var(--shadow-hover); transform: translateY(-6px); }
+  .case-card .photo {
+    width: 100%; height: 240px; overflow: hidden; background: #ddd;
+    position: relative;
+  }
+  .case-card .photo img {
+    width: 100%; height: 100%; object-fit: cover;
+    transition: transform 0.4s ease;
+  }
+  .case-card:hover .photo img { transform: scale(1.05); }
+  .case-card .photo .badge {
+    position: absolute; top: 14px; left: 14px;
+    background: rgba(31,78,121,0.92); color: #fff;
+    padding: 5px 14px; border-radius: 16px;
+    font-size: 11px; font-weight: 600; letter-spacing: 0.5px;
+  }
+  .case-card .body { padding: 24px 26px 26px; flex: 1; display: flex; flex-direction: column; }
+  .case-card h3 { color: var(--text-dark); font-size: 17px; margin-bottom: 10px; line-height: 1.4; }
+  .case-card .meta {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    color: var(--text-light); font-size: 12px; margin-bottom: 14px;
+  }
+  .case-card .meta span { display: inline-flex; align-items: center; gap: 4px; }
+  .case-card .meta .region { color: var(--primary); font-weight: 600; }
+  .case-card .meta .cat { background: #F0F4F8; padding: 2px 10px; border-radius: 10px; color: var(--primary-dark); }
+  .case-card .desc { color: var(--text-body); font-size: 13.5px; line-height: 1.7; flex: 1; }
+  .case-card .tags {
+    display: flex; gap: 6px; margin-top: 14px; flex-wrap: wrap;
+  }
+  .case-card .tags span {
+    background: #FFF8E1; color: #B8860B;
+    padding: 4px 12px; border-radius: 4px; font-size: 11px; font-weight: 600;
+  }
+  .case-card .highlight-box {
+    background: linear-gradient(135deg, rgba(31,78,121,0.05), rgba(212,175,55,0.08));
+    border-left: 3px solid var(--gold);
+    padding: 12px 16px; border-radius: 0 8px 8px 0;
+    margin-top: 14px; font-size: 13px; line-height: 1.6;
+    color: var(--primary-dark);
+  }
+
+  /* Global Network */
+  #network { background: linear-gradient(135deg, var(--primary-dark), var(--primary)); color: #fff; }
+  #network .section-header h2 { color: #fff; }
+  #network .section-header .tag { color: var(--gold); }
+  .network-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px;
+  }
+  @media (max-width: 768px) { .network-grid { grid-template-columns: 1fr; } }
+  .network-region {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 12px; padding: 24px; transition: all 0.3s ease;
+  }
+  .network-region:hover { background: rgba(255,255,255,0.1); border-color: rgba(212,175,55,0.3); }
+  .network-region h4 { color: var(--gold); font-size: 15px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .network-region .countries { color: rgba(255,255,255,0.75); font-size: 13px; line-height: 1.8; }
+  .network-region .count { color: rgba(255,255,255,0.5); font-size: 12px; margin-top: 8px; }
+
+  /* Contact */
+  #contact { background: var(--bg-light); }
+  .contact-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 48px;
+  }
+  @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+  .contact-info h3 { color: var(--text-dark); font-size: 22px; margin-bottom: 24px; }
+  .contact-item {
+    display: flex; align-items: flex-start; gap: 16px; padding: 16px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .contact-item:last-child { border-bottom: none; }
+  .contact-item .icon {
+    width: 40px; height: 40px; min-width: 40px; border-radius: 8px;
+    background: var(--primary); color: #fff;
+    display: flex; align-items: center; justify-content: center; font-size: 18px;
+  }
+  .contact-item .info .label { color: var(--text-light); font-size: 12px; }
+  .contact-item .info .value { color: var(--text-dark); font-size: 15px; font-weight: 600; margin-top: 2px; }
+
+  .contact-cta {
+    background: linear-gradient(135deg, var(--primary-dark), var(--primary));
+    border-radius: 16px; padding: 40px; color: #fff; text-align: center;
+  }
+  .contact-cta h3 { font-size: 22px; margin-bottom: 16px; }
+  .contact-cta p { color: rgba(255,255,255,0.8); font-size: 14px; margin-bottom: 24px; line-height: 1.7; }
+  .contact-cta .btn {
+    display: inline-block; background: var(--gold); color: var(--primary-dark);
+    padding: 14px 36px; border-radius: 8px; font-size: 15px; font-weight: 700;
+    text-decoration: none; transition: all 0.2s;
+  }
+  .contact-cta .btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(212,175,55,0.4); }
+
+  /* Footer */
+  footer {
+    background: var(--primary-dark); color: rgba(255,255,255,0.6);
+    padding: 32px 24px; text-align: center; font-size: 13px;
+  }
+  footer .footer-line { width: 60px; height: 2px; background: var(--gold); margin: 0 auto 16px; }
+
+  /* Destruction */
+  #destruction { background: linear-gradient(135deg, #142B26 0%, #1E4A40 55%, #2E6B5A 100%); color: #fff; position: relative; overflow: hidden; }
+  #destruction::before {
+    content: ''; position: absolute; top: -40%; right: -20%;
+    width: 600px; height: 600px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(255,255,255,0.05) 0%, transparent 60%);
+  }
+  #destruction .section-header h2 { color: #fff; }
+  #destruction .section-header .tag { color: #7FBF9F; }
+  #destruction .section-header .line { background: #7FBF9F; }
+  .destro-intro {
+    display: grid; grid-template-columns: 1.4fr 1fr; gap: 48px; align-items: center;
+    margin-bottom: 56px; position: relative;
+  }
+  @media (max-width: 900px) { .destro-intro { grid-template-columns: 1fr; } }
+  .destro-intro p { color: rgba(255,255,255,0.82); font-size: 15px; line-height: 1.9; margin-bottom: 14px; }
+  .destro-intro p strong { color: #7FBF9F; }
+  .destro-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .destro-stat {
+    background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 12px; padding: 22px 18px; text-align: center;
+    transition: all 0.3s ease;
+  }
+  .destro-stat:hover { background: rgba(255,255,255,0.12); border-color: rgba(127,191,159,0.4); }
+  .destro-stat .num { color: #7FBF9F; font-size: 30px; font-weight: 800; line-height: 1; }
+  .destro-stat .label { color: rgba(255,255,255,0.65); font-size: 12px; margin-top: 8px; }
+  .destro-grid {
+    display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; position: relative;
+  }
+  @media (max-width: 1000px) { .destro-grid { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 600px) { .destro-grid { grid-template-columns: 1fr; } }
+  .destro-card {
+    background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 14px; padding: 28px 22px; transition: all 0.3s ease;
+  }
+  .destro-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-4px); border-color: rgba(127,191,159,0.45); }
+  .destro-card .icon {
+    width: 52px; height: 52px; border-radius: 12px;
+    background: linear-gradient(135deg, #7FBF9F, #4E9E7D);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; margin-bottom: 18px;
+  }
+  .destro-card h3 { color: #fff; font-size: 16px; margin-bottom: 10px; }
+  .destro-card p { color: rgba(255,255,255,0.7); font-size: 13px; line-height: 1.7; }
+  .destro-flow {
+    margin-top: 56px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 0;
+    position: relative;
+  }
+  @media (max-width: 900px) { .destro-flow { grid-template-columns: repeat(2, 1fr); gap: 16px; } }
+  @media (max-width: 500px) { .destro-flow { grid-template-columns: 1fr; } }
+  .flow-step { position: relative; padding: 0 20px; text-align: center; }
+  .flow-step::after {
+    content: '→'; position: absolute; right: -8px; top: 24px;
+    color: rgba(127,191,159,0.6); font-size: 20px; font-weight: 700;
+  }
+  .flow-step:last-child::after { content: ''; }
+  @media (max-width: 900px) { .flow-step:nth-child(2)::after { content: ''; } }
+  .flow-step .step-num {
+    width: 52px; height: 52px; margin: 0 auto 14px; border-radius: 50%;
+    background: linear-gradient(135deg, #7FBF9F, #4E9E7D); color: #142B26;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px; font-weight: 800;
+  }
+  .flow-step h4 { color: #fff; font-size: 14px; margin-bottom: 8px; }
+  .flow-step p { color: rgba(255,255,255,0.65); font-size: 12px; line-height: 1.6; }
+
+  /* Language visibility */
+  [data-lang="en"] .cn-only { display: none !important; }
+  [data-lang="cn"] .en-only { display: none !important; }
+</style>
+</head>
+<body data-lang="cn">
+
+<!-- Navigation -->
+<nav>
+  <div class="nav-container">
+    <div class="nav-logo">
+      <div class="logo-icon">L</div>
+      <span class="cn-only">来之贸易</span>
+      <span class="en-only">Laizhi Trading</span>
+    </div>
+    <div class="nav-links">
+      <a href="#about" data-cn="关于我们" data-en="About">关于我们</a>
+      <a href="#services" data-cn="服务范围" data-en="Services">服务范围</a>
+      <a href="#strengths" data-cn="核心优势" data-en="Strengths">核心优势</a>
+      <a href="#categories" data-cn="品类覆盖" data-en="Categories">品类覆盖</a>
+      <a href="#destruction" data-cn="销毁处置" data-en="Destruction">销毁处置</a>
+      <a href="#cases" data-cn="案例展示" data-en="Cases">案例展示</a>
+      <a href="#network" data-cn="全球网络" data-en="Global Network">全球网络</a>
+      <a href="#contact" data-cn="联系我们" data-en="Contact">联系我们</a>
+    </div>
+    <button class="lang-toggle" onclick="toggleLang()">
+      <span class="cn-only">EN</span>
+      <span class="en-only">中文</span>
+    </button>
+  </div>
+</nav>
+
+<!-- Hero -->
+<div class="hero">
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span class="cn-only">保险残值回收 · 货物销毁处置 · 跨境贸易服务</span>
+      <span class="en-only">INSURANCE SALVAGE RECOVERY · CARGO DESTRUCTION · CROSS-BORDER TRADE</span>
+    </div>
+    <h1>
+      <span class="cn-only">上海来之贸易有限公司</span>
+      <span class="en-only">Shanghai Laizhi Trading Co., Ltd.</span>
+    </h1>
+    <p class="subtitle">
+      <span class="cn-only">专注于保险残值回收评估、买家匹配、跨境贸易与货物合规销毁。十年深耕，覆盖亚太、东南亚、中东、非洲、欧洲五大区域全品类货物残值，链接全球40+国家合作网络，为保险公司、船公司及公估机构提供从残值变现到合规销毁的一站式解决方案。</span>
+      <span class="en-only">Specialized in insurance salvage recovery, valuation, buyer matching, cross-border trade, and compliant cargo destruction. A decade of expertise covering all major cargo categories across Asia-Pacific, Southeast Asia, the Middle East, Africa, and Europe — connected to a global partner network in 40+ countries, delivering one-stop solutions from salvage monetization to compliant destruction for insurers, shipping lines, and survey firms.</span>
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="num">10+</div>
+        <div class="label cn-only">年专业经验</div>
+        <div class="label en-only">Years Experience</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">40+</div>
+        <div class="label cn-only">国家合作网络</div>
+        <div class="label en-only">Countries Covered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">7</div>
+        <div class="label cn-only">大品类覆盖</div>
+        <div class="label en-only">Cargo Categories</div>
+      </div>
+      <div class="hero-stat">
+        <div class="num">24h</div>
+        <div class="label cn-only">快速响应</div>
+        <div class="label en-only">Rapid Response</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- About -->
+<section id="about">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="tag cn-only">ABOUT US</span>
+      <span class="tag en-only">ABOUT US</span>
+      <h2 class="cn-only">关于来之贸易</h2>
+      <h2 class="en-only">About Laizhi Trading</h2>
+      <div class="line"></div>
+    </div>
+    <div class="about-grid">
+      <div class="about-text">
+        <p class="cn-only">
+          <span class="highlight">上海来之贸易有限公司</span>总部位于上海，是一家专注于保险残值回收的专业贸易公司。过去十年中，我们在保险残值回收领域深耕细作，服务网络覆盖中国全境及亚太地区，处理过涵盖消费品、食品原材料、化工品、机械设备、大宗散货、新能源设备及跨境电商货物等全部主要品类。
+        </p>
+        <p class="en-only">
+          <span class="highlight">Shanghai Laizhi Trading Co., Ltd.</span> is a specialized trading company headquartered in Shanghai, China, focused on insurance salvage recovery. Over the past decade, we have built deep expertise in salvage recovery across China and the Asia-Pacific region, handling all major cargo categories including consumer goods, food and raw materials, chemicals, machinery and equipment, bulk commodities, new energy equipment, and cross-border e-commerce goods.
+        </p>
+        <p class="cn-only">
+          我们提供从<span class="highlight">现场勘查、残值评估、买家匹配到资金回收</span>的全流程服务，并具备<span class="highlight">保税区操作能力</span>——这一独特优势使我们能够为保险公司和公估机构提供残值出口处置的完整解决方案。
+        </p>
+        <p class="en-only">
+          We provide end-to-end service from <span class="highlight">on-site survey, salvage valuation, buyer matching to fund recovery</span>, and possess <span class="highlight">bonded zone operational capability</span> — a unique advantage that enables us to offer complete salvage export disposal solutions for insurance companies and survey firms.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div class="check">&#10003;</div>
+            <div class="text cn-only"><strong>全流程服务：</strong>勘查 → 评估 → 匹配买家 → 回收结算，一站式完成</div>
+            <div class="text en-only"><strong>Full-Cycle Service:</strong> Survey → Valuation → Buyer Matching → Settlement, all in one</div>
+          </div>
+          <div class="about-feature">
+            <div class="check">&#10003;</div>
+            <div class="text cn-only"><strong>保税区优势：</strong>具备保税仓储、出口加工、通关报检完整能力</div>
+            <div class="text en-only"><strong>Bonded Zone Advantage:</strong> Full capability in bonded warehousing, export processing, and customs clearance</div>
+          </div>
+          <div class="about-feature">
+            <div class="check">&#10003;</div>
+            <div class="text cn-only"><strong>全球网络：</strong>与劳合社代理、独立公估、残值商在亚太、东南亚、中东、非洲、欧洲建立40+国家合作网络</div>
+            <div class="text en-only"><strong>Global Network:</strong> Partnership network with Lloyd's Agents, independent surveyors, and salvage firms across 40+ countries in Asia-Pacific, SE Asia, the Middle East, Africa, and Europe</div>
+          </div>
+          <div class="about-feature">
+            <div class="check">&#10003;</div>
+            <div class="text cn-only"><strong>合规销毁：</strong>国内海关监管销毁 + 全球目的港销毁，销毁证书交付，配合理赔核销闭环</div>
+            <div class="text en-only"><strong>Compliant Destruction:</strong> Customs-supervised destruction in China + global port destruction with Certificate of Destruction for claims closure</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-visual">
+        <h3 class="cn-only">公司一览</h3>
+        <h3 class="en-only">Company at a Glance</h3>
+        <div class="stat-row">
+          <span class="label cn-only">总部</span>
+          <span class="label en-only">Headquarters</span>
+          <span class="val cn-only">上海</span>
+          <span class="val en-only">Shanghai</span>
+        </div>
+        <div class="stat-row">
+          <span class="label cn-only">成立年限</span>
+          <span class="label en-only">Years in Business</span>
+          <span class="val">10+</span>
+        </div>
+        <div class="stat-row">
+          <span class="label cn-only">覆盖区域</span>
+          <span class="label en-only">Coverage Area</span>
+          <span class="val cn-only">亚太 · 东南亚 · 中东 · 非洲 · 欧洲</span>
+          <span class="val en-only">Asia-Pacific · SE Asia · ME · Africa · Europe</span>
+        </div>
+        <div class="stat-row">
+          <span class="label cn-only">合作国家</span>
+          <span class="label en-only">Partner Countries</span>
+          <span class="val">40+</span>
+        </div>
+        <div class="stat-row">
+          <span class="label cn-only">品类覆盖</span>
+          <span class="label en-only">Cargo Categories</span>
+          <span class="val cn-only">全品类</span>
+          <span class="val en-only">All Major</span>
+        </div>
+        <div class="stat-row">
+          <span class="label cn-only">响应时间</span>
+          <span class="label en-only">Response Time</span>
+          <span class="val">24-48h</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="tag">SERVICES</span>
+      <h2 class="cn-only">服务范围</h2>
+      <h2 class="en-only">Our Services</h2>
+      <div class="line"></div>
+    </div>
+    <div class="services-grid">
+      <div class="service-card">
+        <div class="icon">&#128269;</div>
+        <h3 class="cn-only">残值勘查与评估</h3>
+        <h3 class="en-only">Salvage Survey & Valuation</h3>
+        <p class="cn-only">接到委托后24-48小时内安排专业人员到场勘查，对受损货物进行状况评估、损值鉴定和市场估值，出具专业评估报告。</p>
+        <p class="en-only">On-site survey within 24-48 hours of assignment. Professional assessment of damaged cargo condition, damage valuation, and market appraisal with detailed survey reports.</p>
+        <span class="tag-line cn-only">现场勘查 · 损值鉴定 · 市场估值</span>
+        <span class="tag-line en-only">On-site Survey · Damage Assessment · Market Valuation</span>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#129309;</div>
+        <h3 class="cn-only">残值买家匹配</h3>
+        <h3 class="en-only">Buyer Matching</h3>
+        <p class="cn-only">依托十年积累的买家数据库，快速匹配残值货物与最合适的回收买家，涵盖再生资源企业、循环经济产业园、贸易商等多元渠道。</p>
+        <p class="en-only">Leveraging a decade-built buyer database to quickly match salvage cargo with the most suitable recovery buyers, including recycling enterprises, circular economy parks, and traders.</p>
+        <span class="tag-line cn-only">数据库匹配 · 多渠道竞价 · 最优报价</span>
+        <span class="tag-line en-only">Database Matching · Multi-Channel Bidding · Best Offers</span>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#127760;</div>
+        <h3 class="cn-only">跨境残值贸易</h3>
+        <h3 class="en-only">Cross-Border Salvage Trade</h3>
+        <p class="cn-only">提供残值货物的跨境贸易全链路服务，包括国际物流协调、进出口通关、外汇结算等，实现残值货物的全球化处置。</p>
+        <p class="en-only">Full-chain cross-border trade services for salvage cargo, including international logistics coordination, import/export customs clearance, and FX settlement for global disposal.</p>
+        <span class="tag-line cn-only">国际物流 · 通关报检 · 外汇结算</span>
+        <span class="tag-line en-only">Logistics · Customs · FX Settlement</span>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#127981;</div>
+        <h3 class="cn-only">保税区操作</h3>
+        <h3 class="en-only">Bonded Zone Operations</h3>
+        <p class="cn-only">独家具备保税区操作能力，提供保税仓储、出口加工、转口贸易等一站式服务。为保险公司提供残值出口处置的完整解决方案。</p>
+        <p class="en-only">Unique bonded zone capability offering bonded warehousing, export processing, and entrepot trade. Complete salvage export disposal solutions for insurance companies.</p>
+        <span class="tag-line cn-only">保税仓储 · 出口加工 · 转口贸易</span>
+        <span class="tag-line en-only">Bonded Storage · Export Processing · Entrepot Trade</span>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#128221;</div>
+        <h3 class="cn-only">全流程理赔支持</h3>
+        <h3 class="en-only">Full-Cycle Claims Support</h3>
+        <p class="cn-only">从接报勘查到最终资金回收，全程跟进并留存完整文档。协助保险公司、公估机构和被保险人完成残值处置全流程。</p>
+        <p class="en-only">End-to-end tracking from initial survey to final fund recovery with complete documentation. Supporting insurers, surveyors, and insureds through the entire salvage disposal process.</p>
+        <span class="tag-line cn-only">文档管理 · 流程跟进 · 资金回收</span>
+        <span class="tag-line en-only">Documentation · Process Tracking · Fund Recovery</span>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9851;</div>
+        <h3 class="cn-only">残值处置方案</h3>
+        <h3 class="en-only">Salvage Disposal Solutions</h3>
+        <p class="cn-only">根据货物状况和市场条件，定制最优处置方案：拍卖、直接出售、翻新转售、资源再生或环保销毁，实现残值最大化。</p>
+        <p class="en-only">Tailored disposal strategies based on cargo condition and market dynamics: auction, direct sale, refurbishment & resale, resource recovery, or environmentally compliant destruction.</p>
+        <span class="tag-line cn-only">拍卖 · 转售 · 翻新 · 再生 · 销毁</span>
+        <span class="tag-line en-only">Auction · Resale · Refurbish · Recycle · Destroy</span>
+      </div>
+      <div class="service-card">
+        <div class="icon">&#9851;&#65039;</div>
+        <h3 class="cn-only">货物合规销毁处置</h3>
+        <h3 class="en-only">Compliant Cargo Destruction</h3>
+        <p class="cn-only">为变质、损坏、过期或拒收货物提供合规销毁全流程服务：文件审核、方案制定、海关监管销毁、销毁证书出具。覆盖食品、日化、服装、电子、化工等全品类，国内及全球目的港均可执行。</p>
+        <p class="en-only">Full-process compliant destruction for deteriorated, damaged, expired, or rejected cargo: document review, disposal planning, customs-supervised destruction, and Certificate of Destruction issuance. All categories covered — food, daily chemicals, apparel, electronics, chemicals — executed in China and global destination ports.</p>
+        <span class="tag-line cn-only">销毁证书 · 海关监管 · 全球执行 · 空箱归还</span>
+        <span class="tag-line en-only">Cert of Destruction · Customs-Supervised · Global Execution · Container Return</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Strengths -->
+<section id="strengths">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="tag">WHY US</span>
+      <h2 class="cn-only">核心优势</h2>
+      <h2 class="en-only">Core Strengths</h2>
+      <div class="line"></div>
+    </div>
+    <div class="strengths-grid">
+      <div class="strength-item">
+        <div class="num">01</div>
+        <div>
+          <h4 class="cn-only">十年专业深耕</h4>
+          <h4 class="en-only">A Decade of Specialization</h4>
+          <p class="cn-only">十年专注保险残值回收领域，处理过数百起残值案件，积累了丰富的品类知识和市场定价经验。</p>
+          <p class="en-only">Ten years focused exclusively on insurance salvage recovery, having handled hundreds of cases with deep category knowledge and market pricing expertise.</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">02</div>
+        <div>
+          <h4 class="cn-only">保税区独家能力</h4>
+          <h4 class="en-only">Exclusive Bonded Zone Capability</h4>
+          <p class="cn-only">具备保税区操作资质和能力，可提供残值出口处置的完整方案，这是大多数国内残值商不具备的竞争优势。</p>
+          <p class="en-only">Licensed bonded zone operational capability for complete salvage export disposal — a competitive advantage most domestic salvage firms lack.</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">03</div>
+        <div>
+          <h4 class="cn-only">全球合作网络</h4>
+          <h4 class="en-only">Global Partnership Network</h4>
+          <p class="cn-only">与劳合社代理、独立公估公司、国际残值商在亚太、东南亚、中东、非洲、欧洲40+国家建立合作关系，实现跨境残值案件的全球协同处理。</p>
+          <p class="en-only">Partnerships with Lloyd's Agents, independent surveyors, and international salvage firms across 40+ countries in Asia-Pacific, Southeast Asia, the Middle East, Africa, and Europe for global collaborative case handling.</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">04</div>
+        <div>
+          <h4 class="cn-only">全品类覆盖</h4>
+          <h4 class="en-only">All-Category Coverage</h4>
+          <p class="cn-only">从消费品到工业设备，从食品原材料到化工品，从大宗散货到新能源设备，覆盖全部主要货物品类。</p>
+          <p class="en-only">From consumer goods to industrial equipment, from food raw materials to chemicals, from bulk commodities to new energy equipment — all major cargo categories covered.</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">05</div>
+        <div>
+          <h4 class="cn-only">快速响应机制</h4>
+          <h4 class="en-only">Rapid Response Mechanism</h4>
+          <p class="cn-only">24-48小时内安排专业人员到场勘查，72小时内出具初步评估意见，确保理赔流程不因残值环节延误。</p>
+          <p class="en-only">On-site survey within 24-48 hours, preliminary assessment within 72 hours, ensuring claims processing is never delayed by the salvage phase.</p>
+        </div>
+      </div>
+      <div class="strength-item">
+        <div class="num">06</div>
+        <div>
+          <h4 class="cn-only">双语国际沟通</h4>
+          <h4 class="en-only">Bilingual International Communication</h4>
+          <p class="cn-only">中英双语团队，能够无缝对接国际保险公司、公估机构和海外买家，消除跨境合作中的语言障碍。</p>
+          <p class="en-only">Bilingual team (Chinese/English) for seamless communication with international insurers, surveyors, and overseas buyers, eliminating language barriers in cross-border collaboration.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Categories -->
+<section id="categories">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="tag">CATEGORIES</span>
+      <h2 class="cn-only">品类覆盖</h2>
+      <h2 class="en-only">Cargo Categories</h2>
+      <div class="line"></div>
+    </div>
+    <div class="categories-grid">
+      <div class="category-card">
+        <span class="emoji">&#128230;</span>
+        <div class="name cn-only">消费品</div>
+        <div class="name en-only">Consumer Goods</div>
+        <div class="desc cn-only">日用品 / 家电 / 服装 / 电子</div>
+        <div class="desc en-only">Daily goods / Appliances / Apparel / Electronics</div>
+      </div>
+      <div class="category-card">
+        <span class="emoji">&#127806;</span>
+        <div class="name cn-only">食品及原材料</div>
+        <div class="name en-only">Food & Raw Materials</div>
+        <div class="desc cn-only">谷物 / 糖 / 可可 / 饲料 / 油脂</div>
+        <div class="desc en-only">Grains / Sugar / Cocoa / Feed / Oils</div>
+      </div>
+      <div class="category-card">
+        <span class="emoji">&#9883;</span>
+        <div class="name cn-only">化工品</div>
+        <div class="name en-only">Chemicals</div>
+        <div class="desc cn-only">基础化工 / 精细化工 / 化肥</div>
+        <div class="desc en-only">Basic / Fine Chemicals / Fertilizers</div>
+      </div>
+      <div class="category-card">
+        <span class="emoji">&#9881;</span>
+        <div class="name cn-only">机械及设备</div>
+        <div class="name en-only">Machinery & Equipment</div>
+        <div class="desc cn-only">工业机械 / 生产线 / 备件</div>
+        <div class="desc en-only">Industrial Machinery / Production Lines / Parts</div>
+      </div>
+      <div class="category-card">
+        <span class="emoji">&#128666;</span>
+        <div class="name cn-only">大宗散货</div>
+        <div class="name en-only">Bulk Commodities</div>
+        <div class="desc cn-only">矿产品 / 钢材 / 水泥 / 金属</div>
+        <div class="desc en-only">Minerals / Steel / Cement / Metals</div>
+      </div>
+      <div class="category-card">
+        <span class="emoji">&#9728;</span>
+        <div class="name cn-only">新能源设备</div>
+        <div class="name en-only">New Energy Equipment</div>
+        <div class="desc cn-only">光伏板 / 储能柜 / 电池组 / 逆变器</div>
+        <div class="desc en-only">PV Panels / BESS / Batteries / Inverters</div>
+      </div>
+      <div class="category-card">
+        <span class="emoji">&#128230;</span>
+        <div class="name cn-only">跨境电商货物</div>
+        <div class="name en-only">Cross-Border E-Commerce</div>
+        <div class="desc cn-only">退换货 / 滞销品 / 退货处置</div>
+        <div class="desc en-only">Returns / Unsold Stock / Disposal</div>
+      </div>
+      <div class="category-card">
+        <span class="emoji">&#128674;</span>
+        <div class="name cn-only">纸制品及包装</div>
+        <div class="name en-only">Paper & Packaging</div>
+        <div class="desc cn-only">纸浆 / 纸张 / 包装材料</div>
+        <div class="desc en-only">Pulp / Paper / Packaging Materials</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Destruction -->
+<section id="destruction">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="tag cn-only">DESTRUCTION</span>
+      <span class="tag en-only">CARGO DESTRUCTION</span>
+      <h2 class="cn-only">货物合规销毁处置</h2>
+      <h2 class="en-only">Compliant Cargo Destruction</h2>
+      <div class="line"></div>
+    </div>
+    <div class="destro-intro">
+      <div>
+        <p class="cn-only">
+          变质、损坏、过期或遭拒收的货物，需要<strong>合规、可追溯、有证书</strong>的销毁处置。我们为保险公司、船公司及公估机构提供覆盖<strong>国内海关监管销毁</strong>与<strong>全球目的港销毁</strong>的一站式服务：从文件审核、方案制定到销毁执行与<strong>销毁证书（Certificate of Destruction）</strong>交付，全程符合环保及监管要求。
+        </p>
+        <p class="cn-only">
+          依托与中国海关指定销毁企业及境外授权销毁设施的合作网络，我们可在清关后<strong>3–4天</strong>内完成销毁并归还空箱，让您的理赔案件干净、快速地闭环。
+        </p>
+        <p class="en-only">
+          Deteriorated, damaged, expired, or rejected cargo demands <strong>compliant, traceable, certified</strong> destruction. We provide one-stop services covering <strong>customs-supervised destruction in China</strong> and <strong>global destination-port destruction</strong> for insurers, shipping lines, and survey firms: from document review and disposal planning to execution and <strong>Certificate of Destruction</strong> delivery — fully compliant with environmental and regulatory requirements.
+        </p>
+        <p class="en-only">
+          Through partnerships with customs-designated destruction facilities in China and authorized overseas disposal facilities, we can complete destruction and container return within <strong>3–4 days</strong> after customs clearance — closing your claim cases cleanly and quickly.
+        </p>
+      </div>
+      <div class="destro-stats">
+        <div class="destro-stat">
+          <div class="num">3–4天</div>
+          <div class="label cn-only">清关后完成销毁并归还空箱</div>
+          <div class="label en-only">Destruction & Container Return after Clearance</div>
+        </div>
+        <div class="destro-stat">
+          <div class="num">100%</div>
+          <div class="label cn-only">销毁证书交付率</div>
+          <div class="label en-only">Certificate of Destruction Issued</div>
+        </div>
+        <div class="destro-stat">
+          <div class="num">40+</div>
+          <div class="label cn-only">全球执行网络国家</div>
+          <div class="label en-only">Global Execution Countries</div>
+        </div>
+        <div class="destro-stat">
+          <div class="num">7×24</div>
+          <div class="label cn-only">案件全程监管可追溯</div>
+          <div class="label en-only">Full-Case Supervision & Traceability</div>
+        </div>
+      </div>
+    </div>
+    <div class="destro-grid">
+      <div class="destro-card">
+        <div class="icon">&#127859;</div>
+        <h3 class="cn-only">食品及冷链销毁</h3>
+        <h3 class="en-only">Food & Reefer Destruction</h3>
+        <p class="cn-only">变质食品、过期食品、拒收冷链货物（肉类、乳品、水果、谷物、饲料等）的合规销毁，覆盖中国港口及全球主要目的港。</p>
+        <p class="en-only">Compliant destruction of deteriorated, expired, and rejected refrigerated cargo (meat, dairy, fruit, grains, feed, etc.) at Chinese ports and major global destination ports.</p>
+      </div>
+      <div class="destro-card">
+        <div class="icon">&#128737;</div>
+        <h3 class="cn-only">海关监管销毁</h3>
+        <h3 class="en-only">Customs-Supervised Destruction</h3>
+        <p class="cn-only">配合海关对不合格进口货物、侵权货物、退运货物实施监管销毁，对接海关指定销毁企业，全程留痕、合法合规。</p>
+        <p class="en-only">Customs-supervised destruction of non-conforming imports, infringing goods, and returned cargo, through customs-designated facilities with full legal compliance and traceability.</p>
+      </div>
+      <div class="destro-card">
+        <div class="icon">&#128203;</div>
+        <h3 class="cn-only">销毁证书与合规</h3>
+        <h3 class="en-only">Certificates & Compliance</h3>
+        <p class="cn-only">出具授权设施签发的销毁证书（Certificate of Destruction），配合保险公司理赔核销、船公司空箱归还及监管部门存档。</p>
+        <p class="en-only">Certificate of Destruction issued by authorized facilities, supporting insurer claims settlement, container return for shipping lines, and regulatory archiving.</p>
+      </div>
+      <div class="destro-card">
+        <div class="icon">&#127758;</div>
+        <h3 class="cn-only">全球销毁网络</h3>
+        <h3 class="en-only">Global Destruction Network</h3>
+        <p class="cn-only">覆盖加勒比、东南亚、中东、非洲及欧洲主要目的港的授权销毁设施，本地团队协调清关与销毁，跨区域案件一站式交付。</p>
+        <p class="en-only">Authorized destruction facilities across the Caribbean, Southeast Asia, the Middle East, Africa, and Europe — local teams coordinate clearance and destruction for one-stop cross-region delivery.</p>
+      </div>
+    </div>
+    <div class="destro-flow">
+      <div class="flow-step">
+        <div class="step-num">1</div>
+        <h4 class="cn-only">文件审核</h4>
+        <h4 class="en-only">Document Review</h4>
+        <p class="cn-only">提单、装箱单、发票、检疫证明等全套文件审核，确认货物位置与状态</p>
+        <p class="en-only">Review B/L, packing list, invoice, quarantine certs; confirm cargo location & condition</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">2</div>
+        <h4 class="cn-only">方案制定</h4>
+        <h4 class="en-only">Disposal Planning</h4>
+        <p class="cn-only">根据货物品类、包装与当地法规，确定最佳处理路线与目的港</p>
+        <p class="en-only">Determine optimal disposal route & destination port by category, packaging, local rules</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">3</div>
+        <h4 class="cn-only">合规销毁</h4>
+        <h4 class="en-only">Compliant Destruction</h4>
+        <p class="cn-only">清关后3–4天内在授权设施完成销毁，全程监管、影像留证</p>
+        <p class="en-only">Complete destruction at authorized facilities within 3–4 days, fully supervised</p>
+      </div>
+      <div class="flow-step">
+        <div class="step-num">4</div>
+        <h4 class="cn-only">证书交付</h4>
+        <h4 class="en-only">Certificate Delivery</h4>
+        <p class="cn-only">交付销毁证书、归还空箱，配合理赔核销与结算（50%预付+50%完工）</p>
+        <p class="en-only">Deliver Certificate of Destruction, return containers, settle claims (50% deposit + 50% on completion)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Cases -->
+<section id="cases">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="tag">CASE STUDIES</span>
+      <h2 class="cn-only">代表性案例</h2>
+      <h2 class="en-only">Selected Case Studies</h2>
+      <div class="line"></div>
+    </div>
+    <div class="cases-grid">
+      <div class="case-card">
+        <div class="photo" style="background:linear-gradient(135deg, #1F4E79 0%, #2E75B6 100%); display:flex; align-items:center; justify-content:center; position:relative;">
+          <div style="text-align:center; color:#fff;">
+            <div style="font-size:56px; margin-bottom:8px;">&#9728;&#65039;</div>
+            <div style="font-size:14px; opacity:0.85; letter-spacing:1px;">28,080 PV MODULES</div>
+            <div style="font-size:12px; opacity:0.65; margin-top:4px;">45MW PROJECT</div>
+          </div>
+          <div class="badge cn-only">非洲</div>
+          <div class="badge en-only">AFRICA</div>
+        </div>
+        <div class="body">
+          <h3 class="cn-only">津巴布韦45MW光伏项目残值回收</h3>
+          <h3 class="en-only">Zimbabwe 45MW PV Project Salvage Recovery</h3>
+          <div class="meta">
+            <span class="region">&#127477;&#127462; 津巴布韦 / Zimbabwe</span>
+            <span class="cat cn-only">新能源设备</span>
+            <span class="cat en-only">New Energy</span>
+          </div>
+          <p class="desc cn-only">津巴布韦45MW光伏项目中，28,080片光伏组件因运输及质保问题形成残值货物。我方直接对接非洲及中东地区光伏运维公司和二手组件买家，完成跨国买家匹配，实现残值回款闭环。</p>
+          <p class="desc en-only">In a 45MW solar project in Zimbabwe, 28,080 PV modules became salvage goods due to transport damage and warranty issues. We directly engaged PV O&amp;M companies and secondary module buyers across Africa and the Middle East, completing cross-border buyer matching and full salvage recovery.</p>
+          <div class="highlight-box">
+            <span class="cn-only"><strong>核心价值：</strong>跳过国内处置环节，直接将残值货物匹配至海外终端买家，最大化残值回收价值。</span>
+            <span class="en-only"><strong>Key Value:</strong> Bypassed domestic disposal and directly matched salvage goods to overseas end-buyers, maximizing recovery value.</span>
+          </div>
+          <div class="tags">
+            <span class="cn-only">国外买家匹配</span>
+            <span class="cn-only">跨国处置</span>
+            <span class="cn-only">残值回款</span>
+            <span class="en-only">Overseas Buyer Match</span>
+            <span class="en-only">Cross-border Disposal</span>
+            <span class="en-only">Fund Recovery</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="case-card">
+        <div class="photo" style="background:linear-gradient(135deg, #2E7D32 0%, #43A047 100%); display:flex; align-items:center; justify-content:center; position:relative;">
+          <div style="text-align:center; color:#fff;">
+            <div style="font-size:56px; margin-bottom:8px;">&#127806;</div>
+            <div style="font-size:14px; opacity:0.85; letter-spacing:1px;">CORN GLUTEN MEAL</div>
+            <div style="font-size:12px; opacity:0.65; margin-top:4px;">PORT STRANDED CARGO</div>
+          </div>
+          <div class="badge cn-only">东南亚</div>
+          <div class="badge en-only">SE ASIA</div>
+        </div>
+        <div class="body">
+          <h3 class="cn-only">印尼玉米蛋白粉(CGM)拒收案</h3>
+          <h3 class="en-only">Indonesia CGM Rejection Case</h3>
+          <div class="meta">
+            <span class="region">&#127469;&#127465; 印尼 / Indonesia</span>
+            <span class="cat cn-only">食品原材料</span>
+            <span class="cat en-only">Food Raw Material</span>
+          </div>
+          <p class="desc cn-only">出口至印尼的玉米蛋白粉(CGM)因收货人拒收形成滞港货物。我方直接对接东南亚饲料行业买家，完成跨国买家匹配与退运转售，实现残值快速变现。</p>
+          <p class="desc en-only">Corn Gluten Meal (CGM) exported to Indonesia was rejected by the consignee, leaving cargo stranded at port. We directly engaged Southeast Asian feed-industry buyers, completing cross-border buyer matching and return-shipment resale for rapid salvage monetization.</p>
+          <div class="highlight-box">
+            <span class="cn-only"><strong>核心价值：</strong>不依赖国内饲料厂渠道，直接在东南亚区域内匹配终端买家，缩短处置周期。</span>
+            <span class="en-only"><strong>Key Value:</strong> Avoided reliance on domestic feed mills by directly matching end-buyers within Southeast Asia, shortening the disposal cycle.</span>
+          </div>
+          <div class="tags">
+            <span class="cn-only">国外买家匹配</span>
+            <span class="cn-only">滞港处置</span>
+            <span class="cn-only">跨国转售</span>
+            <span class="en-only">Overseas Buyer Match</span>
+            <span class="en-only">Stranded Cargo</span>
+            <span class="en-only">Cross-border Resale</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Global Network -->
+<section id="network">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="tag">GLOBAL NETWORK</span>
+      <h2 class="cn-only">全球合作网络</h2>
+      <h2 class="en-only">Global Partnership Network</h2>
+      <div class="line"></div>
+    </div>
+    <div class="network-grid">
+      <div class="network-region">
+        <h4>&#127464; <span class="cn-only">亚太</span><span class="en-only">Asia-Pacific</span></h4>
+        <div class="countries cn-only">中国 · 日本 · 韩国 · 中国台湾 · 中国香港 · 中国澳门 · 澳大利亚 · 新西兰 · 印度 · 孟加拉国 · 巴基斯坦 · 斯里兰卡</div>
+        <div class="countries en-only">China · Japan · South Korea · Taiwan, China · Hong Kong, China · Macao, China · Australia · New Zealand · India · Bangladesh · Pakistan · Sri Lanka</div>
+      </div>
+      <div class="network-region">
+        <h4>&#127469; <span class="cn-only">东南亚</span><span class="en-only">Southeast Asia</span></h4>
+        <div class="countries cn-only">印度尼西亚 · 缅甸 · 马来西亚 · 泰国 · 越南 · 菲律宾 · 柬埔寨</div>
+        <div class="countries en-only">Indonesia · Myanmar · Malaysia · Thailand · Vietnam · Philippines · Cambodia</div>
+      </div>
+      <div class="network-region">
+        <h4>&#127466; <span class="cn-only">中东</span><span class="en-only">Middle East</span></h4>
+        <div class="countries cn-only">阿联酋 · 沙特阿拉伯 · 卡塔尔 · 科威特 · 约旦 · 土耳其</div>
+        <div class="countries en-only">UAE · Saudi Arabia · Qatar · Kuwait · Jordan · Turkey</div>
+      </div>
+      <div class="network-region">
+        <h4>&#127477; <span class="cn-only">非洲</span><span class="en-only">Africa</span></h4>
+        <div class="countries cn-only">南非 · 莫桑比克 · 坦桑尼亚 · 肯尼亚 · 刚果(金) · 赞比亚 · 塞拉利昂 · 津巴布韦 · 埃塞俄比亚 · 乌干达 · 卢旺达</div>
+        <div class="countries en-only">South Africa · Mozambique · Tanzania · Kenya · DR Congo · Zambia · Sierra Leone · Zimbabwe · Ethiopia · Uganda · Rwanda</div>
+      </div>
+      <div class="network-region">
+        <h4>&#127466; <span class="cn-only">欧洲</span><span class="en-only">Europe</span></h4>
+        <div class="countries cn-only">英国 · 捷克 · 斯洛伐克 · 匈牙利 · 罗马尼亚 · 波兰 · 阿尔巴尼亚 · 丹麦</div>
+        <div class="countries en-only">UK · Czech Republic · Slovakia · Hungary · Romania · Poland · Albania · Denmark</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="section-container">
+    <div class="section-header">
+      <span class="tag">CONTACT</span>
+      <h2 class="cn-only">联系我们</h2>
+      <h2 class="en-only">Contact Us</h2>
+      <div class="line"></div>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3 class="cn-only">联系方式</h3>
+        <h3 class="en-only">Get in Touch</h3>
+        <div class="contact-item">
+          <div class="icon">&#128100;</div>
+          <div class="info">
+            <div class="label cn-only">联系人</div>
+            <div class="label en-only">Contact Person</div>
+            <div class="value cn-only">季琦 (Felix Ji) — 总经理</div>
+            <div class="value en-only">Felix Ji — General Manager</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128222;</div>
+          <div class="info">
+            <div class="label cn-only">电话 / 微信</div>
+            <div class="label en-only">Tel / WeChat</div>
+            <div class="value">+86 18621528695</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#9993;</div>
+          <div class="info">
+            <div class="label cn-only">邮箱</div>
+            <div class="label en-only">Email</div>
+            <div class="value">jiqi.xuanyi@foxmail.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="icon">&#128205;</div>
+          <div class="info">
+            <div class="label cn-only">地址</div>
+            <div class="label en-only">Address</div>
+            <div class="value cn-only">上海市杨浦区军工路100号运河湾39A</div>
+            <div class="value en-only">39A, Yunhe Bay, 100 Junyong Road, Yangpu District, Shanghai, China</div>
+          </div>
+        </div>
+      </div>
+      <div class="contact-cta">
+        <h3 class="cn-only">开启合作</h3>
+        <h3 class="en-only">Let's Work Together</h3>
+        <p class="cn-only">
+          无论您是保险公司、公估机构、经纪公司还是国际残值同行，我们都能为您提供专业的残值回收解决方案。欢迎随时联系我们，探讨合作机会。
+        </p>
+        <p class="en-only">
+          Whether you are an insurance company, survey firm, brokerage, or international salvage partner, we can provide professional salvage recovery solutions. Contact us anytime to explore collaboration opportunities.
+        </p>
+        <a href="mailto:jiqi.xuanyi@foxmail.com" class="btn cn-only">发送邮件</a>
+        <a href="mailto:jiqi.xuanyi@foxmail.com" class="btn en-only">Send Email</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <div class="footer-line"></div>
+  <p class="cn-only">上海来之贸易有限公司 | 保险残值回收 · 货物销毁处置 · 跨境贸易服务</p>
+  <p class="en-only">Shanghai Laizhi Trading Co., Ltd. | Insurance Salvage Recovery · Cargo Destruction · Cross-Border Trade</p>
+  <p style="margin-top:8px;font-size:12px;color:rgba(255,255,255,0.4);">© 2026 Shanghai Laizhi Trading Co., Ltd. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleLang() {
+  const body = document.body;
+  const current = body.getAttribute('data-lang');
+  const newLang = current === 'cn' ? 'en' : 'cn';
+  body.setAttribute('data-lang', newLang);
+
+  // Update nav link text
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    const text = a.getAttribute('data-' + newLang);
+    if (text) a.textContent = text;
+  });
+
+  // Update document title
+  document.title = newLang === 'cn'
+    ? '上海来之贸易有限公司 | Shanghai Laizhi Trading Co., Ltd.'
+    : 'Shanghai Laizhi Trading Co., Ltd. | 上海来之贸易有限公司';
+}
+</script>
+
+</body>
+</html>
